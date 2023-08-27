@@ -3,7 +3,7 @@ const config = {
 	aliases: ["qr", "qrcode"],
 	description: "Generated Qr Code",
 	usage: "qrcode [text]",
-	version: "1.0.0",
+	version: "1.0.1",
 	cooldown: 15,
 	credits: "Tphat - Xva"
 }
@@ -28,7 +28,7 @@ async function onCall({ message, args, getLang }) {
     if (input.length == 0) return message.reply(getLang("Input"));
 
     global
-        .getStream(`https://suy.tanphatt.repl.co/qr?text=${input}`)
+        .getStream(`https://project-api.tanphatt.repl.co/OtherAPIs/qr?text=${input}`)
         .then(stream => {
             message.reply({ attachment: stream });
         })
